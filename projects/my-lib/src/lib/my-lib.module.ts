@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { MyLibComponent } from './my-lib.component';
 import { GridComponent } from './components/grid/grid.component';
-import { BrowserModule } from '@angular/platform-browser';
 import { gToken } from './token';
+import { CommonModule } from '@angular/common';
 
 
 
@@ -12,7 +12,7 @@ import { gToken } from './token';
     GridComponent
   ],
   imports: [
-    BrowserModule
+    CommonModule
   ],
   exports: [
     MyLibComponent,
