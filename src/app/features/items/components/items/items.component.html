@@ -1,2 +1,15 @@
 <p>items works!</p>
 <lib-my-lib></lib-my-lib>
+
+<lib-grid [data]="gdata$|async" [headers]="['lp', 'title', 'price', 'pic', 'actions']">
+  <ng-template let-x let-lp='idx'>
+    <td>{{lp + 1}}</td>
+    <td>{{x.title}}</td>
+    <td>
+      <input type="text" [value]=x.price/></td>
+    <td>
+      <img [src]=x.imgSrc width=40 [alt]=x.title [title]=x.title/>
+    </td>
+    <td><button (click)=onRemove(x.id)>remove</button></td>
+  </ng-template>
+</lib-grid>

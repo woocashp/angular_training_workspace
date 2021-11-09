@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ItemsComponent } from './components/items/items.component';
 import { RouterModule } from '@angular/router';
 import { MyLibModule } from 'my-lib';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -15,7 +16,8 @@ import { MyLibModule } from 'my-lib';
     RouterModule.forChild([
       { path: '', component: ItemsComponent}
     ]),
-    MyLibModule
+    MyLibModule,
+    HttpClientModule
   ]
 })
 export class ItemsModule { }
