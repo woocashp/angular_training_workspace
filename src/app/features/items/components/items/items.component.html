@@ -1,16 +1,18 @@
 <p>items works!</p>
 <lib-my-lib></lib-my-lib>
 
-<lib-grid [data]="gdata$|async" [headers]="['lp', 'title', 'price', 'pic', 'buy', 'more']">
+<lib-grid [data]="gdata$|async" [headers]="['lp', 'title', 'price', 'pic', 'quantity', 'buy', 'more']">
   <ng-template let-x let-lp='idx'>
     <td>{{lp + 1}}</td>
     <td>{{x.title}}</td>
+    <td>{{x.price}}</td>
     <td>
-      <input type="text" [value]=x.price/></td>
-    <td>
-      <img [src]=x.imgSrc width=40 [alt]=x.title [title]=x.title/>
+        <img [src]=x.imgSrc width=40 [alt]=x.title [title]=x.title/>
     </td>
-    <td><button (click)=onBuy(x.id)>buy</button></td>
+    <td>
+      <input type="text" [value]=0/>
+    </td>
+    <td><button (click)=onBuy(x)>buy</button></td>
     <td><button [routerLink]=x.id>more</button></td>
   </ng-template>
 </lib-grid>

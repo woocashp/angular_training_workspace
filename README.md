@@ -4,6 +4,8 @@
 
     ng g c item --skip-tests -s -t
 
+    ng g resolver item
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.5.
 
 ## Development server

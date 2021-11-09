@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { gToken } from 'my-lib';
 import { map, Observable } from 'rxjs';
+import { ItemModel } from 'src/app/shared/models/services.models';
 
 @Component({
   selector: 'app-items',
@@ -21,7 +22,7 @@ export class ItemsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onBuy(item: any) {
+  onBuy(item: ItemModel) {
     console.warn('I\'m buying', item)
   }
 }

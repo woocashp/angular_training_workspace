@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { MyLibModule } from 'my-lib';
 import { HttpClientModule } from '@angular/common/http';
 import { ItemComponent } from './components/item/item.component';
+import { ItemResolver } from './item.resolver';
 
 
 
@@ -17,7 +18,7 @@ import { ItemComponent } from './components/item/item.component';
     CommonModule,
     RouterModule.forChild([
       { path: '', component: ItemsComponent},
-      { path: ':id', component: ItemComponent}
+      { path: ':id', component: ItemComponent, resolve: {item: ItemResolver}}
     ]),
     MyLibModule,
     HttpClientModule
