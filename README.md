@@ -12,6 +12,9 @@ This was generated using https://angular.io/guide/creating-libraries
 
     npm i ../my-workspace/dist/my-lib/my-lib-0.0.1.tgz
 
+    cd projects/my-lib/src/lib/
+    ng g c components/grid --skip-tests
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.1.
 
 ## Development server
