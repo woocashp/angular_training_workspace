@@ -1,11 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { gToken } from 'projects/my-lib/src/lib/token';
 import { map, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [
+    { provide: gToken, useValue: { bgColor: 'green', textColor: 'yellow'}}
+  ]
 })
 export class AppComponent {
   title = 'my-first-app';

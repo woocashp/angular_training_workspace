@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { MyLibComponent } from './my-lib.component';
 import { GridComponent } from './components/grid/grid.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { gToken } from './token';
 
 
 
@@ -16,6 +17,9 @@ import { BrowserModule } from '@angular/platform-browser';
   exports: [
     MyLibComponent,
     GridComponent
+  ],
+  providers: [
+    { provide: gToken, useValue: { bgColor: 'red', textColor: 'yellow'}}
   ]
 })
 export class MyLibModule { }

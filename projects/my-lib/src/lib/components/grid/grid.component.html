@@ -2,32 +2,17 @@
 
 <div *ngIf="!data?.length">you should pass data any[]</div>
 <div *ngIf="!tpl">you should pass ng-template</div>
-<table class="my-table">
+<table *ngIf="data?.length" class="my-table" [ngStyle]="{background: colors.bgColor}">
   <thead>
     <tr>
       <th *ngFor="let head of headers">{{head}}</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let item of data; let idx = index">
-      <ng-container *ngTemplateOutlet="tpl; context: { $implicit: item, idx }"></ng-container>
+    <tr *ngFor="let row of data; let idx = index">
+    <!-- <tr *ngFor="let row of data | slice:currentPage * pageSize:currentPage * pageSize + pageSize; let idx = index"> -->
+      <ng-container *ngTemplateOutlet="tpl; context: { $implicit: row, idx }"></ng-container>
     </tr>
   </tbody>
 </table>
-
-
-<!-- <table *ngIf="data?.length" class="my-table" [ngStyle]="{background: configService.bgColor}">
-  <thead>
-      <tr>
-          <th *ngFor="let head of headers">
-              {{head}}
-          </th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr *ngFor="let row of data | slice:currentPage * pageSize:currentPage * pageSize + pageSize; let idx=index">
-          <ng-container *ngTemplateOutlet="tpl; context: {$implicit: row, nr: idx+1}"></ng-container>
-      </tr>
-  </tbody>
-</table> -->
 
