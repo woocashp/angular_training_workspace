@@ -16,7 +16,7 @@ This was generated using https://angular.io/guide/creating-libraries
     ng g c components/grid --skip-tests
 
     cd my-workspace/projects/my-lib/
-    ng version minor
+    npm version patch
     cd ../../
     ng build my-lib
     cd dist/my-lib
