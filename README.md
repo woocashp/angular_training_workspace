@@ -2,15 +2,15 @@
 
 This was generated using https://angular.io/guide/creating-libraries
 
- ng new my-workspace --no-create-application
- cd my-workspace
- ng generate library my-lib
+    ng new my-workspace --no-create-application
+    cd my-workspace
+    ng generate library my-lib
  
- ng build my-lib --configuration development
- ng test my-lib
- ng lint my-lib
+    ng build my-lib --configuration development
+    ng test my-lib
+    ng lint my-lib
 
- npm i ../my-workspace/dist/my-lib/my-lib-0.0.1.tgz
+    npm i ../my-workspace/dist/my-lib/my-lib-0.0.1.tgz
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.1.
 
