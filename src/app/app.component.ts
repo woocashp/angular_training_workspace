@@ -29,7 +29,7 @@ export class AppComponent {
   // this.multicastOperators();
   
   // this.customOperators();
-  this.higherOrder()
+  // this.higherOrder()
   }  
 
   higherOrder() {

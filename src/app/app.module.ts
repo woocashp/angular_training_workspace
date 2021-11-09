@@ -4,10 +4,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { StopWatchComponent } from './stop-watch.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    StopWatchComponent
   ],
   imports: [
     BrowserModule,
