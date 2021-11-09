@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { ItemsComponent } from './components/items/items.component';
 import { RouterModule } from '@angular/router';
 import { MyLibModule } from 'my-lib';
-import { HttpClientModule } from '@angular/common/http';
 import { ItemComponent } from './components/item/item.component';
 import { ItemResolver } from './item.resolver';
 
@@ -20,8 +19,7 @@ import { ItemResolver } from './item.resolver';
       { path: '', component: ItemsComponent},
       { path: ':id', component: ItemComponent, resolve: {item: ItemResolver}}
     ]),
-    MyLibModule,
-    HttpClientModule
+    MyLibModule
   ]
 })
 export class ItemsModule { }

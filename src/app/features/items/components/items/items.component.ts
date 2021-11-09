@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { gToken } from 'my-lib';
-import { map, Observable } from 'rxjs';
+import { map, Observable, tap } from 'rxjs';
 import { ItemModel } from 'src/app/shared/models/services.models';
+import { ItemsStoreService } from '../../items-store.service';
 
 @Component({
   selector: 'app-items',
@@ -14,12 +15,14 @@ import { ItemModel } from 'src/app/shared/models/services.models';
 })
 export class ItemsComponent implements OnInit {
 
-  gdata$:Observable<any> = this.http.get('https://api.debugger.pl/items').pipe(map((res:any) => res.data))
+  gdata$:Observable<any>;
 
-  constructor(private http: HttpClient) {
+  constructor(private itemsService: ItemsStoreService) {
+    this.gdata$ = this.itemsService.getState();
   }
 
   ngOnInit(): void {
+    this.itemsService.fetch()
   }
 
   onBuy(item: ItemModel) {
