@@ -2,6 +2,8 @@
 
     npm i ../my-workspace/dist/my-lib/my-lib-0.1.0.tgz
 
+    ng g c item --skip-tests -s -t
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.5.
 
 ## Development server

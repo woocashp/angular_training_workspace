@@ -8,7 +8,7 @@ import { map, Observable } from 'rxjs';
   templateUrl: './items.component.html',
   styleUrls: ['./items.component.scss'],
   providers: [
-    { provide: gToken, useValue: { bgColor: 'blue', textColor: 'red'}}
+    { provide: gToken, useValue: { bgColor: 'lightgreen', textColor: 'red'}}
   ]
 })
 export class ItemsComponent implements OnInit {
@@ -21,8 +21,7 @@ export class ItemsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onRemove(item: any) {
-    console.warn(item)
+  onBuy(item: any) {
+    console.warn('I\'m buying', item)
   }
-
 }
