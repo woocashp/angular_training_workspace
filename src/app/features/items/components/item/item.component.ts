@@ -6,9 +6,16 @@ import { ItemModel } from 'src/app/shared/models/services.models';
 @Component({
   selector: 'app-item',
   template: `
-    <div *ngFor="let item of item$|async|keyvalue">
+    <!-- <div *ngFor="let item of item$|async|keyvalue">
       {{item.key}} - {{item.value}}
-    </div>
+    </div> -->
+
+    <lib-grid [data]=item$|async|keyvalue [headers]="['key', 'value']">
+      <ng-template let-x>
+        <td>{{x.key}}</td>
+        <td>{{x.value}}</td>
+      </ng-template>
+    </lib-grid>
   `,
   styles: [
   ]
