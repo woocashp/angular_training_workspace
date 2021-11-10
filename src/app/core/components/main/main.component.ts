@@ -13,6 +13,10 @@ export class MainComponent {
 
   cart$: Observable<any> = this.cartService.getState();
 
+  count$: Observable<any> = this.cartService.getState().pipe(map((state) => {
+    return state.reduce((acc: any, item: any) => acc + item.count, 0)
+  }))
+
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches),
