@@ -11,9 +11,10 @@ import { InputComponent } from './components/form-generator/fields/input/input.c
 import { SelectComponent } from './components/form-generator/fields/select/select.component';
 import { ButtonComponent } from './components/form-generator/fields/button/button.component';
 import { ContenteditableComponent } from './components/form-generator/fields/contenteditable/contenteditable.component';
+import { EditableComponent } from './components/form-generator/controls/editable/editable.component';
 
 @NgModule({
-  declarations: [ActiveDirective, SpinnerComponent, FormGeneratorComponent, FieldGeneratorDirective, InputComponent, SelectComponent, ButtonComponent, ContenteditableComponent],
+  declarations: [ActiveDirective, SpinnerComponent, FormGeneratorComponent, FieldGeneratorDirective, InputComponent, SelectComponent, ButtonComponent, ContenteditableComponent, EditableComponent],
   imports: [
     CommonModule,
     MatProgressSpinnerModule,

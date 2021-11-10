@@ -22,6 +22,8 @@
     ng g c shared/components/form-generator/fields/button --skip-tests -s -t
     ng g c shared/components/form-generator/fields/contenteditable --skip-tests -s -t
 
+    ng g c shared/components/form-generator/controls/editable --skip-tests -s
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.5.
 
 ## Development server
