@@ -13,6 +13,15 @@
     npm install idb
     ng g s features/cart/cart-idb --skip-tests
 
+    ng g c shared/components/form-generator --skip-tests
+
+    ng g d shared/directives/field-generator --skip-tests
+
+    ng g c shared/components/form-generator/fields/input --skip-tests -s -t
+    ng g c shared/components/form-generator/fields/select --skip-tests -s -t
+    ng g c shared/components/form-generator/fields/button --skip-tests -s -t
+    ng g c shared/components/form-generator/fields/contenteditable --skip-tests -s -t
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.5.
 
 ## Development server

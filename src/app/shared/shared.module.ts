@@ -4,14 +4,22 @@ import { ActiveDirective } from './directives/active.directive';
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { SpinnerComponent } from "../shared/components/spinner/spinner.component";
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { FormGeneratorComponent } from './components/form-generator/form-generator.component';
+import { FieldGeneratorDirective } from './directives/field-generator.directive';
+import { ReactiveFormsModule } from '@angular/forms';
+import { InputComponent } from './components/form-generator/fields/input/input.component';
+import { SelectComponent } from './components/form-generator/fields/select/select.component';
+import { ButtonComponent } from './components/form-generator/fields/button/button.component';
+import { ContenteditableComponent } from './components/form-generator/fields/contenteditable/contenteditable.component';
 
 @NgModule({
-  declarations: [ActiveDirective, SpinnerComponent],
+  declarations: [ActiveDirective, SpinnerComponent, FormGeneratorComponent, FieldGeneratorDirective, InputComponent, SelectComponent, ButtonComponent, ContenteditableComponent],
   imports: [
     CommonModule,
     MatProgressSpinnerModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    ReactiveFormsModule
   ],
-  exports: [ActiveDirective, SpinnerComponent]
+  exports: [ActiveDirective, SpinnerComponent, FormGeneratorComponent, FieldGeneratorDirective]
 })
 export class SharedModule { }

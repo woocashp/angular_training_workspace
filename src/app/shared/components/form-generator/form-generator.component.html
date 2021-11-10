@@ -1,0 +1,19 @@
+<p>form-generator works!</p>
+
+
+<div style="display: flex;">
+  <div style="margin: 0 20px;">
+
+
+    <form [formGroup]="form" *ngIf="formConfig" (ngSubmit)="onSubmit()">
+      <!-- <input type="text" formControlName="quote"> -->
+      <ng-container *ngFor="let config of formConfig" [appFieldGenerator]="{config, form}"></ng-container>
+    </form>
+
+
+  </div>
+  <div>
+    <pre>{{form.value|json}}</pre>
+  </div>
+</div>
+
