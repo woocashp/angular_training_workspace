@@ -1,9 +1,9 @@
-import { Message } from '../utils/services.models';
 import { Api } from '../utils/api';
 import { Injectable } from '@angular/core';
 import { webSocket } from 'rxjs/webSocket';
 import { Subject, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 
 @Injectable({
   providedIn: 'root',
