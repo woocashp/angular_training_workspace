@@ -52,36 +52,37 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 #### Programowanie reaktywne - RxJs
 - Tworzenie strumieni
-- Observable
-- Subject
-- BehaviorSubject
-- ReplaySubject
+  - Observable
+  - Subject
+  - BehaviorSubject
+  - ReplaySubject
 - Operatory
-- przetwarzanie: map, buffer, group, scan ...
-- Filtrowanie: filter, throttling, skip, debounce ...
-- Łączenie: zip, merge, combine latest …
-- warunkowe: iif, every
-- narzędzia: tap, delay, toObservable
+  - przetwarzanie: map, buffer, group, scan ...
+  - Filtrowanie: filter, throttling, skip, debounce ...
+  - Łączenie: zip, merge, combine latest …
+  - warunkowe: iif, every
+  - narzędzia: tap, delay, toObservable
 - Przydatne mechanizmy
-- Higher order observables
-- Cold and Hot observables
-#### Generowanie własnej biblioteki - Angular library
+  - Higher order observables
+  - Cold and Hot observables
 
+#### Generowanie własnej biblioteki - Angular library
 - Tworzenie multi-project workspace
 - Tworzenie biblioteki
-- Konfiguracja oraz export biblioteki
-- Publikowanie biblioteki na npm (opcja)
-- Aktualizacja oraz wersjonowanie
+  - Konfiguracja oraz export biblioteki
+  - Publikowanie biblioteki na npm (opcja)
+  - Aktualizacja oraz wersjonowanie
 - Tworzenie projektu
-- Instalacja biblioteki - lokalnie oraz z NPM
-- Testowanie biblioteki
+  - Instalacja biblioteki - lokalnie oraz z NPM
+  - Testowanie biblioteki
+
 #### Reaktywne zarządzanie stanem aplikacji
 - Omówienie architektury Redux
 - RxJs/BehaviorSubject state
-- set & get state
-- map to entities
-- loading state
-- routing state
+  - set & get state
+  - map to entities
+  - loading state
+  - routing state
 
 #### Komponenty
 - Ograniczenie odpowiedzialności komponentów; reużywalność
@@ -91,9 +92,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 #### Dyrektywy
 - Własne dyrektywy strukturalne i atrybutowe
 - Wykorzystanie serwisów w dyrektywach
-- ViewContainerRef
-- TemplateRef
-- ComponentFactoryResolver
+  - ViewContainerRef
+  - TemplateRef
+  - ComponentFactoryResolver
 - Export dyrektywy
 - HostListener & HostBinding
 
@@ -101,8 +102,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - Dane opisujące formularz (JSON)
 - Dynamiczne tworzenie modelu formularza - form builder
 - Dynamiczne tworzenie instancji komponentów
-- ng-container
-- ngTemplateOutlet
+  - ng-container
+  - ngTemplateOutlet
 - Walidacja
 - Obsługa zdarzeń
 - Nietypowe pola formularza - form API
@@ -119,8 +120,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 #### Zapis danych w przeglądarce
 - IndexedDB
-- Odczyt i zapis
-- Kontrolowanie wersji
+  - Odczyt i zapis
+  - Kontrolowanie wersji
 - LocalStorage
 
 #### Wprowadzenie do PWA - Progressive Web Apps
