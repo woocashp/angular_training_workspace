@@ -2,4 +2,122 @@
 
 <app-form-generator [config]="formConfig$|async"></app-form-generator>
 
-<!-- <pre>{{formConfig$|async|json</pre> -->
+<!-- <pre>{{formConfig$|async|json}}</pre>
+
+[
+  {
+    "type": "input",
+    "label": "your first name",
+    "name": "firstname",
+    "value": "",
+    "placeholder": "Enter your first name - min 4 characters",
+    "validators": [
+      {
+        "name": "required",
+        "message": "field is required"
+      },
+      {
+        "name": "minLength",
+        "param": 4,
+        "message": "min. 4 znaki"
+      }
+    ]
+  },
+  {
+    "type": "input",
+    "label": "your email",
+    "name": "email",
+    "value": "",
+    "placeholder": "Enter your email",
+    "validators": [
+      {
+        "name": "required",
+        "message": "field is required"
+      },
+      {
+        "name": "email",
+        "message": "invalid email"
+      }
+    ]
+  },
+  {
+    "type": "radio",
+    "label": "do your like cakes?",
+    "name": "cakes",
+    "options": [
+      "yes, I like so much",
+      "I don't like",
+      "I like a little"
+    ],
+    "direction": "vertical",
+    "placeholder": "Select an option",
+    "validators": [
+      {
+        "name": "required",
+        "message": "select one"
+      }
+    ]
+  },
+  {
+    "type": "radio",
+    "label": "gender",
+    "name": "gender",
+    "options": [
+      "man",
+      "woman"
+    ],
+    "direction": "horizontal",
+    "placeholder": "Select an option",
+    "validators": [
+      {
+        "name": "required",
+        "message": "select one"
+      }
+    ]
+  },
+  {
+    "type": "select",
+    "label": "favourite Food",
+    "name": "food",
+    "options": [
+      "Pizza",
+      "Hot Dogs",
+      "Knakworstje",
+      "Coffee"
+    ],
+    "placeholder": "Select an option",
+    "validators": [
+      {
+        "name": "required",
+        "message": "select one"
+      }
+    ]
+  },
+  {
+    "type": "input",
+    "label": "password",
+    "name": "password",
+    "placeholder": "4-8 characters, upper and lower case letters and numbers",
+    "validators": [
+      {
+        "name": "required",
+        "message": "field is required"
+      },
+      {
+        "name": "pattern",
+        "param": "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{4,8}$",
+        "message": "4-8 znaków; min. jedna mała i jedna duża litera oraz jedna cyfra"
+      }
+    ]
+  },
+  {
+    "type": "contenteditable",
+    "label": "favourite quote",
+    "name": "quote",
+    "value": "<i>Powiedz mi, a zapomnę, pokaż mi, a zapamiętam, pozwól mi zrobić (zaangażuj mnie), a zrozumiem.</i><br><b>Konfucjusz<b>"
+  },
+  {
+    "type": "button",
+    "label": "send"
+  }
+] -->
