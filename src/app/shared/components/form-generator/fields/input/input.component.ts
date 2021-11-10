@@ -9,6 +9,14 @@ import { FieldConfig } from 'src/app/shared/models/form.models';
       <label>{{config.label}}</label>
       <input type="text" [formControlName]="config.name">
       <!-- <pre>{{config|json}}</pre> -->
+      <div class="error">
+        {{form.get(config.name)?.errors | json}}
+
+        <!-- <app-errors [errors]="form.get(config.name)?.errors"></app-errors> -->
+        <div class="error" *ngIf="form.get(config.name)?.hasError">
+          Pole wymagane
+        </div>
+      </div>
     </div>
   `,
   styles: [
