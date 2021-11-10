@@ -10,6 +10,16 @@ import { CartIDBService } from './cart-idb.service';
   providedIn: 'root'
 })
 export class CartStoreService extends Store<CartItemModel[]>{
+  removeItem(item: ItemModel) {
+    of(item)
+      .pipe(
+        withLatestFrom(super.getState())
+      )
+      .subscribe(([item, state]) => {
+        const newState = Utils.removeOrDecreaseParam(state, item, 'count')
+        super.setState(newState)
+      });
+  }
 
   buyItem(item: ItemModel) {
     of(item)
