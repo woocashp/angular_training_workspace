@@ -1,6 +1,6 @@
-import { FieldConfig, FieldTypes } from './../../models/form.models';
+import { FieldConfig, FieldTypes, FieldValidator } from './../../models/form.models';
 import { Component, OnInit, Input } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 
 
 @Component({
@@ -20,7 +20,8 @@ export class FormGeneratorComponent implements OnInit {
     config
       .filter((fieldConfig) => fieldConfig.type !== FieldTypes.button)
       .forEach((fieldConfig) => {
-        this.form.addControl(fieldConfig.name, this.fb.control(fieldConfig.value));
+        // debugger;
+        this.form.addControl(fieldConfig.name, this.fb.control(fieldConfig.value, this.getValidators(fieldConfig.validators)));
       })
   }
 
@@ -36,8 +37,19 @@ export class FormGeneratorComponent implements OnInit {
     private fb: FormBuilder
   ) { }
 
-
   ngOnInit(): void {
+
+  }
+
+  getValidators(validators: FieldValidator[] | undefined): ValidatorFn[] | null {
+    if (!validators) return null;
+    return validators.map((validator: FieldValidator): ValidatorFn => {
+      return validator.name in Validators
+        ? validator.param
+          ? (Validators[validator.name] as Function)(validator.param)
+          : Validators[validator.name]
+        : null;
+    });
   }
 
   onSubmit() {
