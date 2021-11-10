@@ -2,7 +2,7 @@
 
 <div *ngIf="!data?.length">you should pass data any[]</div>
 <div *ngIf="!tpl">you should pass ng-template</div>
-<table *ngIf="data?.length" class="my-table" [ngStyle]="{background: colors.bgColor}">
+<table *ngIf="data?.length" class="my-table" [ngStyle]="{background: colors.bgColor, color: colors.textColor}">
   <thead>
     <tr>
       <th *ngFor="let head of headers">{{head}}</th>
