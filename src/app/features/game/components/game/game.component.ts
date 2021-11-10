@@ -1,6 +1,6 @@
 import { EmbeddedTemplateAst } from '@angular/compiler';
 import { Component, EmbeddedViewRef, OnInit, TemplateRef, ViewChild, ViewContainerRef, ViewRef } from '@angular/core';
-import { catchError, fromEvent, map, of, retry, switchMap, throwError } from 'rxjs';
+import { catchError, fromEvent, map, of, pipe, retry, switchMap, throttleTime, throwError } from 'rxjs';
 import { Message } from 'src/app/shared/models/services.models';
 import { GameApiService } from 'src/app/shared/services/game.service';
 
@@ -15,6 +15,20 @@ export class GameComponent implements OnInit {
 
   players: Map<string, EmbeddedViewRef<any>> = new Map();
 
+
+  // Context explained
+  // const obj = {
+  //   name: 'bob',
+  //   displayName() {
+  //     console.log(this.name);
+  //   }
+  // }
+
+  // const fn = obj.displayName;
+  // fn();
+
+  // obj.displayName()
+
   constructor(
     private gameService: GameApiService,
     private container: ViewContainerRef
@@ -28,9 +42,7 @@ export class GameComponent implements OnInit {
         return throwError(() => err)
       })
     )
-    .subscribe(() => {
-      this.init();
-    });
+    .subscribe(this.init.bind(this))
   }
 
   register() {
@@ -61,6 +73,9 @@ export class GameComponent implements OnInit {
     });
 
     fromEvent<MouseEvent>(document.body, 'mousemove')
+      .pipe(
+        throttleTime(17)
+      )
       .subscribe(({ clientX, clientY }: MouseEvent) => {
         this.gameService.messanger.next({ clientX, clientY });
       })
