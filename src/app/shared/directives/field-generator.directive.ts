@@ -9,8 +9,10 @@ import { FieldConfig } from '../models/form.models';
 
 const types: any = {
   input: InputComponent,
-  // TODO: radio w materiałach
+  // TODO: radio & password w materiałach
+  password: InputComponent,
   radio: InputComponent,
+
   select: SelectComponent,
   contenteditable: ContenteditableComponent,
   button: ButtonComponent
@@ -30,7 +32,7 @@ export class FieldGeneratorDirective {
       comp.instance.config = config;
       comp.instance.form = form;
     } catch (error) {
-      debugger;
+      // debugger;
     }
   }
 

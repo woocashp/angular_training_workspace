@@ -1,5 +1,7 @@
 <p>cart works!</p>
 
+<app-form-generator [config]="form"></app-form-generator>
+
 <lib-grid [data]="(cart$|async) || []" [headers]="['title','img','quantity', 'add/romove']">
   <ng-template let-item>
     <td>{{item.title}}</td>
