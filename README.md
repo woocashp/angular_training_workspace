@@ -10,6 +10,9 @@
 
     ng g s features/cart/cart-store --skip-tests
 
+    npm install idb
+    ng g s features/cart/cart-idb --skip-tests
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.5.
 
 ## Development server
