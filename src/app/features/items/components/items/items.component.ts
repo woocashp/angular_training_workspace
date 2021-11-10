@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { gToken } from 'my-lib';
 import { map, Observable, tap } from 'rxjs';
+import { CartStoreService } from 'src/app/features/cart/cart-store.service';
 import { ItemModel } from 'src/app/shared/models/services.models';
 import { ItemsStoreService } from '../../items-store.service';
 
@@ -17,7 +18,10 @@ export class ItemsComponent implements OnInit {
 
   gdata$:Observable<any>;
 
-  constructor(private itemsService: ItemsStoreService) {
+  constructor(
+    private itemsService: ItemsStoreService,
+    private cartService: CartStoreService
+  ) {
     this.gdata$ = this.itemsService.getState();
   }
 
@@ -27,5 +31,6 @@ export class ItemsComponent implements OnInit {
 
   onBuy(item: ItemModel) {
     console.warn('I\'m buying', item)
+    this.cartService.setState([{...item, count: 1}])
   }
 }
