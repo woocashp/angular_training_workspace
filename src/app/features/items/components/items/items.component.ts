@@ -31,6 +31,6 @@ export class ItemsComponent implements OnInit {
 
   onBuy(item: ItemModel) {
     console.warn('I\'m buying', item)
-    this.cartService.setState([{...item, count: 1}])
+    this.cartService.buyItem(item);
   }
 }
